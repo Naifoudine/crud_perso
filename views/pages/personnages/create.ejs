@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+  </head>
+  <body class="container">
+    <header><%- include('../../partials/header'); %></header>
+    <h2>Enter perso Details</h2>
+    <form action="/perso/create" method="POST">
+        <div class="mb-3 row">
+            <label for="firstName" class="col-sm-2 col-form-label">Prenom : </label> 
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="firstName" />
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="lastName" class="col-sm-2 col-form-label">Nom : </label> 
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="lastName" /> 
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="genre" class="col-sm-2 col-form-label">Genre : </label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="genre" id="inlineRadio1" value="m">
+                <label class="form-check-label" for="inlineRadio1">masculin</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="genre" id="inlineRadio2" value="f">
+                <label class="form-check-label" for="inlineRadio2">feminin</label>
+              </div>
+        </div>
+         <br />
+        <input type="submit" />
+    </form>
+  </body>
+</html>

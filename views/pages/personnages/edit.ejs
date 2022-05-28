@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit perso</title>
+  </head>
+  <body>
+    <h2>Edit perso Details</h2>
+    <form action="/persos/update/<%= perso._id %>?_method=PUT" method="post">
+      <p>
+        <label for="firstName">Prenom : </label> <input type="text" name="firstName" value="<%= perso.firstName %>" /> <br /> <br />
+        <label for="lastName">Nom : </label> <input type="text" name="lastName" value="<%= perso.lastName %>" /> <br /><br />
+        <label for="genre">Genre : </label>
+        <input type="text" name="genre" value="<%= perso.genre %>" /> <br />
+        <input type="submit" />
+      </p>
+    </form>
+
+  </body>
+</html>

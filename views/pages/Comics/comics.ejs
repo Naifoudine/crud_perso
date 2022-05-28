@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+  </head>
+  <body class="container">
+    <header><%- include('../../partials/header'); %></header>
+
+    <main>
+        <div class="row">
+            <div class="col-sm-8"><h2>Comics <b>list</b></h2></div>
+            <div class="col-sm-4">
+                <a class="btn btn-info add-new" href="/comics/create" ><i class="fa fa-plus"></i> Ajouter un nouveau comics</a>
+            </div>
+        </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Titre</th>
+            <th scope="col">Description</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=1; i < comics.length; i++) { %>
+          <tr>
+            <th scope="row"><%= i %></th>
+            <td><%= comics[i].title %></td>
+            <td><%= comics[i].description %></td>
+            <td>
+              <a
+                class="btn btn-raised btn-secondary mx-2"
+                href="/comics/<%= comics[i]._id %>"
+                >En savoir plus</a
+              >
+              <a
+                class="btn btn-raised btn-warning mx-2"
+                href="/comics/edit/<%= comics[i]._id %>"
+                >Modifier</a
+              >
+              <a
+                class="btn btn-raised btn-danger mx-2"
+                onclick="return confirm('Etes vous sûr de supprimer ce Comics?');"
+                href="/comics/delete/<%= comics[i]._id %>"
+                >Supprimer</a
+              >
+            </td>
+          </tr>
+          <% }; %>
+        </tbody>
+      </table>
+    </main>
+
+    <footer><%- include('../../partials/footer'); %></footer>
+  </body>
+</html>

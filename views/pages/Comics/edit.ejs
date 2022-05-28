@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+  </head>
+  <body class="container">
+    <header><%- include('../../partials/header'); %></header>
+    <h2>Edit comics Details</h2>
+    <form action="/comics/update/<%= comics._id %>?_method=PUT" method="post">
+      <div class="mb-3 row">
+        <label for="title" class="col-sm-2 col-form-label">Titre : </label> 
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="title" value="<%= comics.title %>" />
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="description" class="col-sm-2 col-form-label">Description : </label> 
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="description" value="<%= comics.description %>" /> 
+        </div>
+    </div>
+    <input type="submit" />
+    </form>
+
+  </body>
+</html>
